@@ -1,4 +1,5 @@
 # VideoDrone
+Featuring [Ruby](http://www.ruby-lang.org/en/), [DRb](http://www.ruby-doc.org/stdlib-1.9.2/libdoc/drb/rdoc/DRb.html), [WebSockets](http://websocket.org/index.html), [GWT](http://code.google.com/webtoolkit/) and [MPlayer](http://www.mplayerhq.hu/design7/info.html).
 
 ## Objective
 To have a software that would be able to control multiprojector visual installations
@@ -16,9 +17,11 @@ through user friendly web GUI.
 ## Initial functionality
 ### Basic pilot version
   * starting/pausing/resuming/stopping a particular video sequence on a chosen data projector
+ 
 ### Next stage
   * synchronizing video sequences among the players
   * fast forward / seek / slow motion / fast motion settings to the selected video sequences
+
 ### Future plans
 Optionally, there might be web cameras installed in the video hall. Streams coming
 from these cameras would be routed to the web application for user to
@@ -40,5 +43,6 @@ satisfies all the needs for a very responsive / UX lovely web GUI.
 
 ## Installation
 Coming soon...
+
     tunnel to the server: ssh -L9001:127.0.0.1:9001 -R9000:127.0.0.1:9000 your.server.com
 
