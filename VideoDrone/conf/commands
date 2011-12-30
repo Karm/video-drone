@@ -1,0 +1,8 @@
+{
+  :init_player    => 'mplayer -slave -quiet -idle',
+  :play_file      => 'loadfile',
+  :go_fullscreen  => 'vo_fullscreen',
+  :toggle_pause   => 'pause',
+  :stop_player    => 'stop',
+  :quit_player    => 'quit'
+}

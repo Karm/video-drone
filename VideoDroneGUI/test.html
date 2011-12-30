@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src='js/swfobject.js'></script>
+    <script src='js/FABridge.js'></script>
+    <script src='js/web_socket.js'></script>
+    <script>
+      var ws;
+      function log(string, target) {
+          var element = document.getElementById(target);
+          var p = document.createElement("p");
+          p.appendChild(document.createTextNode(string));
+          element.appendChild(p);
+      }
+      function init() {
+        var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
+        ws = new Socket("ws://localhost:8080/");
+        ws.onmessage = function(evt) { log(evt.data, "debug"); };
+        ws.onclose = function() { log("socket closed", "debug"); };
+        ws.onopen = function() {
+          log("connected...", "debug");
+        };
+      };
+      function sendCommand(command) {
+        ws.send(command);
+        log(command, "log")
+      };
+    </script>
+  </head>
+  <body onload="init();">
+    <div id="log">
+    </div>
+    <div>
+    <input type=text name="command" id="command_text">
+    <input type=button value="Execute" onclick='sendCommand(document.getElementById("command_text").value)'>
+    </div>
+    <div id="debug">
+    </div>
+  </body>
+</html>

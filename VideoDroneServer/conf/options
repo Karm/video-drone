@@ -1,0 +1,10 @@
+{
+  :WebSockets_port		=>	8080,
+  :WebSockets_host		=>	"0.0.0.0",
+
+  # With ssh tunnel
+  #:DRb_start_service	=>	'druby://127.0.0.1:9001',
+  
+  # With localhost (testing etc)
+  :DRb_start_service	=>	'druby://:9001'
+}
