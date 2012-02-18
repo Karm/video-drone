@@ -1,4 +1,4 @@
-require "./video/VideoPlayer"
+require "./video/video_player"
 
 #
 # VideoDrone

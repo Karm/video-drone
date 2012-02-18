@@ -1,5 +1,5 @@
 require 'drb'
-require './video/VideoDrone'
+require './video/video_drone'
 require 'logger'
 
 #

@@ -1,7 +1,7 @@
 require 'drb'
-require './server/VideoDroneServer'
-require './server/GUIService'
-require './server/WebSocketsService'
+require './server/video_drone_server'
+require './server/gui_service'
+require './server/web_sockets_service'
 
 #
 # VideoDroneServer entry point
