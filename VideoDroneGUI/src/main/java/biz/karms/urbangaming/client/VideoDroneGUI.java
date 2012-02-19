@@ -21,7 +21,7 @@ public class VideoDroneGUI implements EntryPoint {
 		resizePanel.setWidget(new HTML("meh..."));
 		
 		decorator.add(resizePanel);
-		RootPanel.get("perunWeb").add(decorator);
+		RootPanel.get("videoDroneGUI").add(decorator);
 
 	}
 	
