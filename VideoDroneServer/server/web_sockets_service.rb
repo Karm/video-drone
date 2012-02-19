@@ -5,7 +5,7 @@ require 'em-websocket'
 #
 class WebSocketsService
   attr_reader :websockets_worker
-    
+
   def initialize log, options, gui_service
     @options = options
     @gui_service = gui_service
@@ -28,7 +28,7 @@ class WebSocketsService
             update_drones ws
           }
           ws.onmessage { |message|
-            process_message message, ws 
+            process_message message, ws
           }
           ws.onclose {
             @sockets.delete ws
@@ -42,7 +42,7 @@ class WebSocketsService
     }
   end
 
-  def process_message message, ws   
+  def process_message message, ws
     match = @regular_for_command.match message
     case match[1]
       when "play" then
@@ -84,13 +84,13 @@ class WebSocketsService
       else
         @log.error "Unknown command:" + match[1] 
         ws.send "log_info Woot?!:" + match[1]
-    end  
+    end
   end
-  
+
   def send_to_all message
     @sockets.each {|s| s.send message}
   end
-  
+
   def update_drones ws = nil
     if ws != nil
       ws.send "drones " + @gui_service.list_drones
@@ -98,5 +98,5 @@ class WebSocketsService
       send_to_all "drones " + @gui_service.list_drones 
     end
   end
-  
+
 end

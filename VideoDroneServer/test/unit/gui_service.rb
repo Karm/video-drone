@@ -11,8 +11,7 @@ class TestGUIService < MiniTest::Unit::TestCase
     video_drone_server = VideoDroneServer.new log
     mock_video_drone = MiniTest::Mock.new
     # mock expects:
-    #           method                return  arguments
-    mock_video_drone.expect(:get_available_media, "Not yet supported")
+    #                       method                return  arguments
     mock_video_drone.expect(:ID,                  666)
     video_drone_server.register_drone mock_video_drone
     @gui_service = GUIService.new log, video_drone_server

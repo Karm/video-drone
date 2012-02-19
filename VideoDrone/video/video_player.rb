@@ -25,7 +25,7 @@ class VideoPlayer
   end
 
   # Play file & Go fullscreen immediately
-  def play_file(path)
+  def play_file path
     unless @is_inited
       raise "Uninitialized player."
     end
