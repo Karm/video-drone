@@ -6,9 +6,4 @@ source :gemcutter
 source "http://gemcutter.org"
 
 gem "em-websocket"
-
-group :development, :test do
-  #Meh...colours?
-  gem "turn"
-  gem "minitest"
-end
+gem "minitest"
