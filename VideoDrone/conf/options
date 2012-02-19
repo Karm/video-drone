@@ -1,7 +1,7 @@
 {
   # ID, should be unique among Video Drones.
   # TODO: Get ID as a command line argument?
-  :ID => '1',  
+  :ID => '1',
 
   # With ssh tunnel
   #:DRb_start_service   => 'druby://127.0.0.1:9000',

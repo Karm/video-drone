@@ -8,7 +8,7 @@ require './server/web_sockets_service'
 #
 
 #Logging
-log = Logger.new(STDOUT) 
+log = Logger.new(STDOUT)
 log.level = Logger::DEBUG
 
 options = eval(File.open('./conf/options') {|f| f.read })
@@ -16,7 +16,7 @@ options = eval(File.open('./conf/options') {|f| f.read })
 #Initialize VideoDrone server so as Video Drones can register to it...
 video_drone_server = VideoDroneServer.new log
 gui_service = GUIService.new log, video_drone_server
-websockets_service = WebSocketsService.new log, options, gui_service  
+websockets_service = WebSocketsService.new log, options, gui_service
   
 DRb.start_service options[:DRb_start_service], video_drone_server
 log.info "Server running at #{DRb.uri}"

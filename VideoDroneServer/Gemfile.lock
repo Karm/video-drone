@@ -7,13 +7,19 @@ GEM
   remote: http://gemcutter.org/
   specs:
     addressable (2.2.6)
+    ansi (1.4.2)
     em-websocket (0.3.5)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
     eventmachine (0.12.10)
+    minitest (2.11.2)
+    turn (0.9.3)
+      ansi
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   em-websocket
+  minitest
+  turn
