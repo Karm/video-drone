@@ -17,6 +17,11 @@
   <!-- Other module inherits                                      -->
   <inherits name="com.google.gwt.http.HTTP" />
 
+        <define-property name="web.sockets" values="true,false" />
+        <!-- Help: http://code.google.com/p/gwt-comet/source/browse/trunk/src/net/zschech/gwt/websockets/WebSockets.gwt.xml -->
+        <property-provider name="web.sockets"><![CDATA[
+                return ("MozWebSocket" in window || "WebSocket" in window);
+        ]]></property-provider>
   <!-- Specify the app entry point class.                         -->
   <entry-point class='biz.karms.urbangaming.client.VideoDroneGUI' />
 
