@@ -45,4 +45,6 @@ satisfies all the needs for a very responsive / UX lovely web GUI.
 Coming soon...
 
     tunnel to the server: ssh -L9001:127.0.0.1:9001 -R9000:127.0.0.1:9000 your.server.com
+    
+    http://my.server.com:8080/videodrone-gui-1.0-SNAPSHOT/
 
