@@ -23,34 +23,35 @@ public class WebSocket {
         public static native WebSocketImpl create(WebSocket client,
                 String server)
         /*-{
-            //var ws = new WebSocket(server);
-            var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
-            var ws = new Socket(server);
-            ws.onopen = $entry(function() {
-                client.@biz.karms.urbangaming.client.service.WebSocket::onOpen()();
-            });
-            ws.onmessage = $entry(function(response) {
-                client.@biz.karms.urbangaming.client.service.WebSocket::onMessage(Ljava/lang/String;)(response.data);
-            });
-            ws.onclose = $entry(function() {
-                client.@biz.karms.urbangaming.client.service.WebSocket::onClose()();
-            });
-            return ws;
+         // Michal Karm Babacek: An important hack that makes it run in FireFox 8,9
+         //var ws = new WebSocket(server);
+         var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
+         var ws = new Socket(server);
+         ws.onopen = $entry(function() {
+            client.@biz.karms.urbangaming.client.service.WebSocket::onOpen()();
+         });
+         ws.onmessage = $entry(function(response) {
+            client.@biz.karms.urbangaming.client.service.WebSocket::onMessage(Ljava/lang/String;)(response.data);
+         });
+         ws.onclose = $entry(function() {
+            client.@biz.karms.urbangaming.client.service.WebSocket::onClose()();
+         });
+         return ws;
         }-*/;
 
         public static native boolean isSupported() /*-{
-            return !!window.WebSocket;
+         return (!!window.WebSocket || !!window.MozWebSocket);
         }-*/;
 
         protected WebSocketImpl() {
         }
 
         public native void close() /*-{
-            this.close();
+         this.close();
         }-*/;
 
         public native void send(String data) /*-{
-            this.send(data);
+         this.send(data);
         }-*/;
     }
 

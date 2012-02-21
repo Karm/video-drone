@@ -21,5 +21,5 @@ public interface WebSocketCallback {
 
     void onDisconnect();
 
-	void onMessage(String message);
+    void onMessage(String message);
 }
