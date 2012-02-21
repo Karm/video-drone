@@ -3,6 +3,9 @@
   # TODO: Get ID as a command line argument?
   :ID => '1',  
 
+  # Note: You have to change both ID and DRb_start_service port
+  # in order to run more than one VideoDrone at the same time!
+
   # With ssh tunnel
   #:DRb_start_service   => 'druby://127.0.0.1:9000',
   #:DRbObject_new    => 'druby://127.0.0.1:9001'
